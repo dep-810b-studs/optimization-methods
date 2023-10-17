@@ -1,4 +1,4 @@
-﻿namespace task_03
+﻿namespace OptimizationMethods.Core
 {
     public class ValidationStatus
     {

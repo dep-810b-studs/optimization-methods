@@ -1,9 +1,8 @@
-﻿using System;
-using System.Numerics;
+﻿using System.Numerics;
 
-namespace task_03
+namespace OptimizationMethods.Core
 {
-    public class Function
+    public class Function2
     {
         public static Func<Vector2, double> f = vector => 
             vector.X + 4 * vector.Y - 2 * Math.Pow(vector.Y,2);
