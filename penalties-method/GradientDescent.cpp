@@ -23,7 +23,8 @@ double GradientDescent::df_dx_2(Vector vector)
 
 double GradientDescent::norma(Vector right_vector, Vector left_vector)
 {
-    return sqrt(pow(right_vector.x_1 - left_vector.x_1,2)+pow(right_vector.x_2 - left_vector.x_2,2));
+    auto diff_vector = Vector(right_vector.x_1 - left_vector.x_1, right_vector.x_2 - left_vector.x_2);
+    return sqrt(pow(diff_vector.x_1,2) + pow(diff_vector.x_2,2));
 }
 
 Vector GradientDescent::step(Vector x_i)
@@ -47,7 +48,7 @@ Vector GradientDescent::run(Vector initial_approximation)
 
     output_file_stream << "t_k = " << _t_k << std::endl;
 
-    for(int i = 0; i < 10000; ++i)
+    for(int i = 0; i < 10000 && norma(current_value, prev_value) > _epsilon; ++i)
     {
         prev_value = current_value;
         current_value = step(initial_approximation);
@@ -57,5 +58,7 @@ Vector GradientDescent::run(Vector initial_approximation)
     }
 
     output_file_stream << "finish with current t_k" << std::endl;
+
+    return current_value;
 }
 

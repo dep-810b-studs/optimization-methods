@@ -32,7 +32,10 @@ vector gradient_spusk::step(vector operand)
     return result;
 }
 
-double gradient_spusk::norma(vector first, vector second)
+double gradient_spusk::norma(vector right_vector, vector left_vector)
 {
-    return 0;
+    vector diff_vector;
+    diff_vector.x = right_vector.x - left_vector.x;
+    diff_vector.y = right_vector.y - left_vector.y;
+    return sqrt(pow(diff_vector.x,2) + pow(diff_vector.y,2));
 }
