@@ -8,7 +8,7 @@ namespace OptimizationMethods.Application
     {
         private const double EPSILON = 1e-3;
         
-        static void Main2(string[] args)
+        public static void Main2(string[] args)
         {
             Vector2 cur = new Vector2(-5, 0);
             double delimeter = 1.1;
