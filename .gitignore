@@ -1,6 +1,9 @@
 *.idea/
-*.cmake-build-debug/
-*/.cmake-build-debug/
-newton/.cmake-build-debug/
-newton/cmake-build-debug/
-gradient-descent/cmake-build-debug/
+**/cmake-build-debug
+**/*.pdf
+**/*.zip
+**/*.rar
+**/*.exe
+**/*.docx
+**/bin
+**/obj
