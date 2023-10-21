@@ -1,5 +1,7 @@
-﻿using System.CommandLine;
+﻿using System;
+using System.CommandLine;
 using System.IO;
+using System.Linq;
 
 namespace OptimizationMethods.Application;
 
@@ -18,7 +20,15 @@ internal static class CliHandlerFactory
 
         fileOption.AddAlias("-i");
         rootCommand.AddOption(fileOption);
+        
+        rootCommand.SetHandler(ReadFile, fileOption);
 
         return rootCommand;
-    } 
+    }
+    
+    static void ReadFile(FileInfo file)
+    {
+        File.ReadLines(file.FullName).ToList()
+            .ForEach(Console.WriteLine);
+    }
 }
