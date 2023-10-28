@@ -28,7 +28,8 @@ internal static class CliHandlerFactory
     
     static void ReadFile(FileInfo file)
     {
-        File.ReadLines(file.FullName).ToList()
+        File.ReadLines(file.FullName)
+            .ToList()
             .ForEach(Console.WriteLine);
     }
 }
