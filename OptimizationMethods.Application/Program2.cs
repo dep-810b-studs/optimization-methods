@@ -11,7 +11,7 @@ namespace OptimizationMethods.Application
         public static void Main2(string[] args)
         {
             Vector2 cur = new Vector2(-5, 0);
-            double delimeter = 1.1;
+            double delimeter =  1.1;
             double tk = 0.1;
             int step = 0;
 
